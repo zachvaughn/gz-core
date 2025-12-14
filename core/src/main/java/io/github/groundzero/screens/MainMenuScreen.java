@@ -102,7 +102,7 @@ public class MainMenuScreen implements Screen {
         TextButton.TextButtonStyle playExitButtonStyle = new TextButton.TextButtonStyle();
         playExitButtonStyle.font = skin.getFont("buttonFont");
 
-        // Rounded button
+        // Rounded button backgrounds
         playExitButtonStyle.up = skin.newDrawable("default-round", new Color(0, 0, 0, 0.25f));
         playExitButtonStyle.over = skin.newDrawable("default-round", new Color(1, 1, 1, 0.08f));
         playExitButtonStyle.down = skin.newDrawable("default-round", new Color(1, 1, 1, 0.14f));
@@ -121,7 +121,7 @@ public class MainMenuScreen implements Screen {
         root.setFillParent(true);
         root.center();
 
-        // Card/panel for contrast
+        // Card/panel to give contrast over the background
         Table card = new Table();
         card.setBackground(skin.newDrawable("default-round", new Color(0, 0, 0, 0.22f)));
         card.pad(42);
@@ -147,7 +147,7 @@ public class MainMenuScreen implements Screen {
         TextButton exitButton = new TextButton("EXIT", skin, "playExitButtonStyle");
         //TextButton instructionsButton = new TextButton("INSTRUCTIONS", skin, "playExitButtonStyle");
 
-        // Scale smoothly on hover
+        // Let buttons scale smoothly on hover
         playButton.setTransform(true);
         playButton.setOrigin(Align.center);
         exitButton.setTransform(true);
@@ -273,7 +273,7 @@ public class MainMenuScreen implements Screen {
         batch.begin();
         batch.draw(background, drawX, drawY, scaledBgWidth, scaledBgHeight);
 
-        // Dark overlay
+        // Subtle dark overlay to help readability
         batch.setColor(0f, 0f, 0f, 0.18f);
         batch.draw(uiPixel, 0, 0, screenWidth, screenHeight);
         batch.setColor(Color.WHITE);
