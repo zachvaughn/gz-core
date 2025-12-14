@@ -1,44 +1,39 @@
-# GZ (libGDX personal project)
+# Ground Zero (libGDX)
+Ground Zero is a Java-based 2D top-down roguelike shooter built with libGDX.
+The project features AI-driven enemies, tile-based levels, and a modular
+architecture designed for scalability and maintainability.
 
-GZ as of now, is a simple 2D top down rogue-like shooter that features AI enemies, and a pre-made tile map.
+## Requirements
+- Java 17 or newer
 
-# Instructions on how to run the game
-To run the game, clone into IntelliJ and then scroll down to
-"lwjgl3\src\main\java\io.github.groundzero\Lwjgl3Launcher"
-and click the run button in the top right as you would to run any other program.
+## Running the Game
+To build a runnable desktop distribution, run from the source:
+```bash
+git clone https://github.com/zachnv/gz-core.git
+cd gz-core
+./gradlew lwjgl3:run
 
-# Instructions on how to play the game
-Launch the game, click play and then it takes you into the game screen where you spawn with an AR, 120 bullets,
-and can walk around using (W, A, S, D) and left-click on mouse to shoot, when your mag is empty, the gun will automatically reload,
-or if you would like to reload when needed, just press "R"
+On Windows:
+gradlew lwjgl3:run
+```
 
-Spawns basic AI enemies as well. When an enemy dies, they also have a chance of dropping a medkit which will heal you to full health.
-When the player dies, it displays the dead texture and sends you back to the main menu screen where you can play again or exit.
+## Controls
+- Move: W A S D
+- Shoot: Left Mouse Button
+- Reload: R (automatic reload when magazine is empty)
 
-## Platforms
+## Gameplay Overview
+The player spawns with an assault rifle and a limited ammo supply.
+AI-controlled enemies spawn throughout the level and engage the player.
+Defeated enemies have a chance to drop medkits that restore the player to full health.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+When the player dies, the game returns to the main menu, allowing the player
+to restart or exit.
 
-## Gradle
+## Project Structure
+```core``` — Shared game logic and systems\
+```lwjgl3``` — Desktop launcher using LWJGL3
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
-
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
-
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+## Background
+This project was originally developed as an academic project and
+later refined, cleaned up, and published as a personal project.
