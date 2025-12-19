@@ -27,12 +27,14 @@ This project is not intended to be a production-ready game or reusable library. 
 - LWJGL3 (desktop backend)
 
 ## Project Structure
+```
 gz-core/  
 ├── core/    # Core game logic, entities, systems, screens  
 ├── lwjgl3/  # Desktop launcher (LWJGL3)  
 ├── assets/  # Textures, sounds, and other resources  
 ├── build.gradle  
 └── settings.gradle  
+```
 
 ## Running the Project
 To build a runnable desktop distribution, run from the source:
